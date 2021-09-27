@@ -1,6 +1,7 @@
 package sptv20arraypro;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class SPTV20ArrayPro {
     public static void main(String[] args) {
@@ -71,6 +72,40 @@ public class SPTV20ArrayPro {
             System.out.printf("%4d",sumColms[i]);  
         }
         System.out.println();
+       
+        System.out.println("Зубчатые массивы");
+        int[][]matrixZ=new int[7][];
+        matrixZ[0]=new int[1];
+        matrixZ[1]=new int[4];
+        matrixZ[2]=new int[3];
+        matrixZ[3]=new int[4];
+        matrixZ[4]=new int[10];
+        matrixZ[5]=new int[5];
+        matrixZ[6]=new int[8];
+        Random random = new Random();
+        int min=0, max =9;
+        for (int i = 0; i < matrixZ.length; i++) {
+            int sum =0;
+            for (int j = 0; j < matrixZ[i].length; j++) {
+                matrixZ[i][j]=random.nextInt(max-min+1)+min;
+                System.out.printf("%4d",matrixZ[i][j]);
+                sum += matrixZ[i][j];
+                
+            }
+            System.out.println(" сумма строки = "+sum);
+            System.out.println();
+        }
         
+        System.out.println("  ===Сумма столбцов===");
+        for (int i = 0; i < sumColms.length; i++) {
+            System.out.printf("%4d",sumColms[i]); 
+        }
+        System.out.println("Строка в Java");
+        String str;
+        str= "Это строка";
+        System.out.println("str = "+str);
+        System.out.println("редактирование строки создает новую строку");
+        str = str.replace('а', 'и');
+        System.out.println("str = "+str);
     }
 }
